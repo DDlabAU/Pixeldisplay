@@ -61,7 +61,53 @@ void initialize() {
 }
 
 void generate() {
+  boolean newWorld[worldWidth][worldHeight];
+  int stasisCount = 0;
+  int liveDots = 0;
+  for (int x = 0; x < w; x++) {
+    for (int y = 0; y < worldHeight; y++) {
+      int neighbors = 0;
+      for (int i = -1; i <= 1; i++) {
+        for (int j = -1; j <= 1; j++) {
+          int xIndex = x + i;
+          int yIndex = y + j;
+          if (xIndex >= 0 && xIndex < w && yIndex >= 0 && yIndex < w) {
+            neighbors += world[x + i][y + j];
+          }
+        }
+      }
 
+      neighbors -= world[x][y];
+
+      if ((world[x][y] == 1) && (neighbors <  2)) {
+        newWorld[x][y] = 0;           // Loneliness
+      } else if ((world[x][y] == 1) && (neighbors >  3)) {
+        newWorld[x][y] = 0;           // Overpopulation
+      } else if ((world[x][y] == 0) && (neighbors == 3)) {
+        newWorld[x][y] = 1;           // Reproduction
+      } else {
+        newWorld[x][y] = world[x][y];  // Stasis
+        stasisCount++;
+      }
+
+      liveDots += world[x][y];
+    }
+  }
+
+  if(liveDots == 0) {
+    dead = true;
+    deathTime = millis();
+  }
+  if(stasisCount == 64) {
+    stasis = true;
+    stasisTime = millis();
+  }
+
+  for (int x = 0; x < worldWidth; x++) {
+    for (int y = 0; y < worldHeight; y++) {
+      world[x][y] = newWorld[x][y];
+    }
+  }
 }
 
 void printWorld() {
