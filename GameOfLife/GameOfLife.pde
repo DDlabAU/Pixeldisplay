@@ -97,25 +97,30 @@ void generate() {
           int xIndex = x + i;
           int yIndex = y + j;
           if (xIndex >= 0 && xIndex < w && yIndex >= 0 && yIndex < w) {
-            neighbors += world[x + i][y + j];
+            if(world[x + i][y + j] == ALIVE) {
+              neighbors++;
+            }
           }
         }
       }
 
-      neighbors -= world[x][y];
+      if(world[x][y] == ALIVE) {
+        neighbors--;
+      }
 
-      if ((world[x][y] == 1) && (neighbors <  2)) {
-        newWorld[x][y] = 0;           // Loneliness
-      } else if ((world[x][y] == 1) && (neighbors >  3)) {
-        newWorld[x][y] = 0;           // Overpopulation
-      } else if ((world[x][y] == 0) && (neighbors == 3)) {
-        newWorld[x][y] = 1;           // Reproduction
+      if ((world[x][y] == ALIVE) && (neighbors <  2)) {
+        newWorld[x][y] = DEAD;           // Loneliness
+      } else if ((world[x][y] == ALIVE) && (neighbors >  3)) {
+        newWorld[x][y] = DEAD;           // Overpopulation
+      } else if ((world[x][y] == DEAD) && (neighbors == 3)) {
+        newWorld[x][y] = ALIVE;           // Reproduction
       } else {
         newWorld[x][y] = world[x][y];  // Stasis
         stasisCount++;
       }
-
-      liveDots += world[x][y];
+      if(world[x][y] == ALIVE) {
+        liveDots++;
+      }
     }
   }
 
