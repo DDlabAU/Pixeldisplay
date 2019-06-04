@@ -8,6 +8,10 @@ int stasisTime;
 boolean dead = false;
 boolean stasis = false;
 
+int worldWidth = 12;
+int worldHeight = 15;
+boolean world[worldWidt][worldHeight];
+
 void setup() {
   size(600, 800);
 
