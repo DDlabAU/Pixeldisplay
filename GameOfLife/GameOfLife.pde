@@ -111,8 +111,8 @@ void generate() {
 }
 
 void printWorld() {
-  for (int x = 0; x < w; x++) {
-    for (int y = 0; y < w; y++) {
+  for (int x = 0; x < worldWidth; x++) {
+    for (int y = 0; y < worldHeight; y++) {
       print(world[x][y]);
       print(" ");
     }
