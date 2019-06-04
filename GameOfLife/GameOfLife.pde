@@ -1,5 +1,8 @@
 OPC opc;
 
+final ALIVE = true;
+final DEAD = false;
+
 int updateInterval = 10;
 int deathDelay = 2000;
 int stasisDelay = 8000;
