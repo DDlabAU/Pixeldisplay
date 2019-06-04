@@ -47,15 +47,16 @@ void draw() {
 }
 
 void update() {
+  int currentTime = millis();
   if (death) {
-    if(millis() > deathTime + deathDelay){
+    if(currentTime > deathTime + deathDelay){
       initialize();
     }
   } else if (stasis) {
-    if(millis() > stasisTime + stasisDelay){
+    if(currentTime > stasisTime + stasisDelay){
       initialize();
     }
-  } else if (millis() > initializationTime + maxRunTime) { 
+  } else if (currentTime > initializationTime + maxRunTime) { 
     initialize();
   } else {
     generate();
