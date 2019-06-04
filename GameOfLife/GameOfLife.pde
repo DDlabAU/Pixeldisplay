@@ -3,8 +3,8 @@ OPC opc;
 final boolean ALIVE = true;
 final boolean DEAD = false;
 
-color pixelColor = color(150, 150, 0);
-color backgroundColor = color(0);
+color pixelColor = color(0, 100, 200, 100);
+color backgroundColor = color(255);
 
 boolean debugging = false;
 
