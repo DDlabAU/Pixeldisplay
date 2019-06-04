@@ -34,13 +34,12 @@ void setup() {
   opc.ledGrid(1 * 64, 12, 4, width * 1/2, height * 2/5, width/13, height/17, 0, false, false);
   opc.ledGrid(2 * 64, 12, 4, width * 1/2, height * 3/5, width/13, height/17, 0, false, false);
   opc.ledGrid(3 * 64, 12, 4, width * 1/2, height * 4/5, width/13, height/17, 0, false, false);
-  
+
   generate();
 }
 
 void draw() {
   background(backgroundColor);
-  blendMode(ADD);
   update();
   show();
 
@@ -59,7 +58,7 @@ void update() {
     if(currentTime > stasisTime + stasisDelay){
       initialize();
     }
-  } else if (currentTime > initializationTime + maxRunTime) { 
+  } else if (currentTime > initializationTime + maxRunTime) {
     initialize();
   } else {
     generate();
