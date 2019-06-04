@@ -5,7 +5,7 @@ final boolean DEAD = false;
 
 boolean debugging = false;
 
-int updateInterval = 10;
+int updateRate = 10;
 int deathDelay = 2000;
 int stasisDelay = 8000;
 int deathTime;
@@ -20,7 +20,7 @@ boolean[][] world = new boolean[worldWidth][worldHeight];
 
 void setup() {
   size(600, 800);
-
+  frameRate(updateRate);
   // Connect to the local instance of fcserver. You can change this line to connect to another computer's fcserver
   opc = new OPC(this, "127.0.0.1", 7890);
 
