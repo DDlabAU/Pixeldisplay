@@ -74,7 +74,11 @@ void show() {
 void initialize() {
   for (int x = 0; x < worldWidth; x++) {
     for (int y = 0; y < worldHeight; y++) {
-      world[x][y] = random(2);
+      if(random(2) < 1){
+        world[x][y] = ALIVE;
+      } else {
+        world[x][y] = DEAD;
+      }
     }
   }
   dead = false;
