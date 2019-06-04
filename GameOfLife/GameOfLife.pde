@@ -3,6 +3,9 @@ OPC opc;
 final boolean ALIVE = true;
 final boolean DEAD = false;
 
+color pixelColor = color(150, 150, 0);
+color backgroundColor = color(0);
+
 boolean debugging = false;
 
 int updateRate = 5;
@@ -36,7 +39,7 @@ void setup() {
 }
 
 void draw() {
-  background(0);
+  background(backgroundColor);
   blendMode(ADD);
   update();
   show();
@@ -75,12 +78,9 @@ void show() {
       yPos = y * pHeight;
 
       if(world[x][y] == true){
-        fill(255);
-      } else {
-        fill(0);
+        fill(pixelColor);
+        rect(xPos, yPos, pWidth, pHeight);
       }
-
-      rect(xPos, yPos, pWidth, pHeight);
     }
   }
 }
