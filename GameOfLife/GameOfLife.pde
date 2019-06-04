@@ -1,7 +1,7 @@
 OPC opc;
 
-final ALIVE = true;
-final DEAD = false;
+final boolean ALIVE = true;
+final boolean DEAD = false;
 
 boolean debugging = false;
 
