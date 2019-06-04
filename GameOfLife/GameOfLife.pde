@@ -51,7 +51,13 @@ void show() {
 }
 
 void initialize() {
-
+  for (int x = 0; x < worldWidth; x++) {
+    for (int y = 0; y < worldHeight; y++) {
+      world[x][y] = random(2);
+    }
+  }
+  dead = false;
+  stasis = false;
 }
 
 void generate() {
