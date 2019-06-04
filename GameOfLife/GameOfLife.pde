@@ -135,7 +135,7 @@ void generate() {
     death = true;
     deathTime = millis();
   }
-  if(stasisCount == 64) {
+  if(stasisCount == worldWidth * worldHeight) {
     stasis = true;
     stasisTime = millis();
   }
