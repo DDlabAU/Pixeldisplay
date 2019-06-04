@@ -47,7 +47,25 @@ void update() {
 }
 
 void show() {
+  int xPos;
+  int yPos;
+  int pWidth = width / worldWidth;
+  int pHeight = height / worldHeight;
 
+  for (int x = 0; x < worldWidth; x++) {
+    for (int y = 0; y < worldHeight; y++) {
+      xPos = x * pWdith;
+      yPos = y * pHeight;
+
+      if(world[x][y] == true){
+        fill(255);
+      } else {
+        fill(0);
+      }
+
+      rect(xPos, yPos, pWidth, pHeight);
+    }
+  }
 }
 
 void initialize() {
