@@ -10,7 +10,7 @@ boolean stasis = false;
 
 int worldWidth = 12;
 int worldHeight = 15;
-boolean world[worldWidt][worldHeight];
+boolean world[worldWidth][worldHeight];
 
 void setup() {
   size(600, 800);
