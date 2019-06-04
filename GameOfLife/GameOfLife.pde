@@ -6,8 +6,10 @@ final boolean DEAD = false;
 boolean debugging = false;
 
 int updateRate = 5;
+int maxRunTime = 15000;
+int initializationTime;
 int deathDelay = 2000;
-int stasisDelay = 8000;
+int stasisDelay = 4000;
 int deathTime;
 int stasisTime;
 boolean death = false;
@@ -53,6 +55,8 @@ void update() {
     if(millis() > stasisTime + stasisDelay){
       initialize();
     }
+  } else if (millis() > initializationTime + maxRunTime) { 
+    initialize();
   } else {
     generate();
   }
@@ -92,6 +96,7 @@ void initialize() {
   }
   death = false;
   stasis = false;
+  initializationTime = millis();
 }
 
 void generate() {
