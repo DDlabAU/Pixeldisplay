@@ -6,7 +6,7 @@ final boolean DEAD = false;
 boolean debugging = false;
 
 int updateRate = 5;
-int maxRunTime = 15000;
+int maxRunTime = 30000;
 int initializationTime;
 int deathDelay = 2000;
 int stasisDelay = 4000;
