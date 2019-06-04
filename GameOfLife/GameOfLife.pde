@@ -155,7 +155,7 @@ void printWorld() {
       } else {
         print("0");
       }
-      print("\t");
+      print(" ");
     }
     println();
   }
