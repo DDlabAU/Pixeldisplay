@@ -1,5 +1,13 @@
 OPC opc;
 
+int updateInterval = 10;
+int deathDelay = 2000;
+int stasisDelay = 8000;
+int deathTime;
+int stasisTime;
+boolean dead = false;
+boolean stasis = false;
+
 void setup() {
   size(600, 800);
 
