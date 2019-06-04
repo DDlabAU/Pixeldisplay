@@ -15,7 +15,8 @@ boolean stasis = false;
 
 int worldWidth = 12;
 int worldHeight = 15;
-boolean world[worldWidth][worldHeight];
+boolean[][] world = new boolean[worldWidth][worldHeight];
+
 
 void setup() {
   size(600, 800);
