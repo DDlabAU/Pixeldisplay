@@ -16,4 +16,33 @@ void setup() {
 void draw() {
   background(0);
   blendMode(ADD);
+  update();
+  show();
+}
+
+void update() {
+
+}
+
+void show() {
+
+}
+
+void initialize() {
+
+}
+
+void generate() {
+
+}
+
+void printWorld() {
+  for (int x = 0; x < w; x++) {
+    for (int y = 0; y < w; y++) {
+      print(world[x][y]);
+      print(" ");
+    }
+    println();
+  }
+  println();
 }
