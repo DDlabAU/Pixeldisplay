@@ -103,7 +103,7 @@ void generate() {
         for (int j = -1; j <= 1; j++) {
           int xIndex = x + i;
           int yIndex = y + j;
-          if (xIndex >= 0 && xIndex < w && yIndex >= 0 && yIndex < w) {
+          if (xIndex >= 0 && xIndex < worldWidth && yIndex >= 0 && yIndex < worldHeight) {
             if(world[x + i][y + j] == ALIVE) {
               neighbors++;
             }
