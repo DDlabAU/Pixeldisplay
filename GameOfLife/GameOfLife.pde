@@ -5,7 +5,7 @@ final boolean DEAD = false;
 
 boolean debugging = false;
 
-int updateRate = 10;
+int updateRate = 5;
 int deathDelay = 2000;
 int stasisDelay = 8000;
 int deathTime;
