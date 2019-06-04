@@ -29,7 +29,17 @@ void draw() {
 }
 
 void update() {
-
+  if (dead) {
+    if(millis() > deathTime + deathDelay){
+      initialize();
+    }
+  } else if (stasis) {
+    if(millis() > stasisTime + stasisDelay){
+      initialize();
+    }
+  } else {
+    generate();
+  }
 }
 
 void show() {
