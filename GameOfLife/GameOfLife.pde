@@ -89,7 +89,7 @@ void generate() {
   boolean newWorld[worldWidth][worldHeight];
   int stasisCount = 0;
   int liveDots = 0;
-  for (int x = 0; x < w; x++) {
+  for (int x = 0; x < worldWidth; x++) {
     for (int y = 0; y < worldHeight; y++) {
       int neighbors = 0;
       for (int i = -1; i <= 1; i++) {
