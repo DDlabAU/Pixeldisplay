@@ -149,8 +149,12 @@ void generate() {
 void printWorld() {
   for (int x = 0; x < worldWidth; x++) {
     for (int y = 0; y < worldHeight; y++) {
-      print(world[x][y]);
-      print(" ");
+      if(world[x][y] == ALIVE) {
+        print("1");
+      } else {
+        print("0");
+      }
+      print("\t");
     }
     println();
   }
