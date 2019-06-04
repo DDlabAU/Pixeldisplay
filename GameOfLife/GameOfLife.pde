@@ -26,6 +26,7 @@ boolean[][] world = new boolean[worldWidth][worldHeight];
 void setup() {
   size(600, 800);
   frameRate(updateRate);
+  noStroke();
   // Connect to the local instance of fcserver. You can change this line to connect to another computer's fcserver
   opc = new OPC(this, "127.0.0.1", 7890);
 
