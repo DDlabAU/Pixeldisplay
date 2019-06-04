@@ -10,7 +10,7 @@ int deathDelay = 2000;
 int stasisDelay = 8000;
 int deathTime;
 int stasisTime;
-boolean dead = false;
+boolean death = false;
 boolean stasis = false;
 
 int worldWidth = 12;
@@ -43,7 +43,7 @@ void draw() {
 }
 
 void update() {
-  if (dead) {
+  if (death) {
     if(millis() > deathTime + deathDelay){
       initialize();
     }
@@ -88,7 +88,7 @@ void initialize() {
       }
     }
   }
-  dead = false;
+  death = false;
   stasis = false;
 }
 
@@ -132,7 +132,7 @@ void generate() {
   }
 
   if(liveDots == 0) {
-    dead = true;
+    death = true;
     deathTime = millis();
   }
   if(stasisCount == 64) {
