@@ -3,6 +3,8 @@ OPC opc;
 final ALIVE = true;
 final DEAD = false;
 
+boolean debugging = false;
+
 int updateInterval = 10;
 int deathDelay = 2000;
 int stasisDelay = 8000;
@@ -33,6 +35,10 @@ void draw() {
   blendMode(ADD);
   update();
   show();
+
+  if(debugging) {
+    printWorld();
+  }
 }
 
 void update() {
