@@ -71,7 +71,7 @@ void show() {
       xPos = x * pWidth;
       yPos = y * pHeight;
 
-      if(world[x][y] == true){
+      if(world[x][y] == ALIVE){
         fill(pixelColor);
         rect(xPos, yPos, pWidth, pHeight);
       }
