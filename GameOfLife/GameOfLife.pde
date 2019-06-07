@@ -36,6 +36,7 @@ void setup() {
 void draw() {
   background(backgroundColor);
   update();
+  generateHash();
   show();
 
   if(debugging) {
@@ -173,4 +174,19 @@ void initDisplay() {
   opc.ledGrid(1 * 64, 12, 4, width * 1/2, height * 2/5, width/13, height/17, 0, false, false);
   opc.ledGrid(2 * 64, 12, 4, width * 1/2, height * 3/5, width/13, height/17, 0, false, false);
   opc.ledGrid(3 * 64, 12, 4, width * 1/2, height * 4/5, width/13, height/17, 0, false, false);
+}
+
+int generateHash() {
+  int hash = 0;
+  for (int x = 0; x < worldWidth; x++) {
+    for (int y = 0; y < worldHeight; y++) {
+      if(world[x][y] == ALIVE) {
+        hash += (x * 50 + y);
+      }
+    }
+  }
+  if(debugging) {
+    println(hash);
+  }
+  return hash;
 }
