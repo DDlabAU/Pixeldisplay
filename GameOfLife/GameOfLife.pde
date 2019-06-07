@@ -22,6 +22,7 @@ int worldWidth = 12;
 int worldHeight = 15;
 boolean[][] world = new boolean[worldWidth][worldHeight];
 
+ArrayList<Integer> hashes = new ArrayList<Integer>();
 
 void setup() {
   size(600, 800);
@@ -93,12 +94,11 @@ void initialize() {
   death = false;
   stasis = false;
   initializationTime = millis();
+  hashes.clear();
 }
 
 void generate() {
   boolean[][] newWorld = new boolean[worldWidth][worldHeight];
-  int stasisCount = 0;
-  int liveDots = 0;
   for (int x = 0; x < worldWidth; x++) {
     for (int y = 0; y < worldHeight; y++) {
       int neighbors = 0;
@@ -126,21 +126,8 @@ void generate() {
         newWorld[x][y] = ALIVE;           // Reproduction
       } else {
         newWorld[x][y] = world[x][y];  // Stasis
-        stasisCount++;
-      }
-      if(world[x][y] == ALIVE) {
-        liveDots++;
       }
     }
-  }
-
-  if(liveDots == 0) {
-    death = true;
-    deathTime = millis();
-  }
-  if(stasisCount == worldWidth * worldHeight) {
-    stasis = true;
-    stasisTime = millis();
   }
 
   for (int x = 0; x < worldWidth; x++) {
@@ -148,6 +135,20 @@ void generate() {
       world[x][y] = newWorld[x][y];
     }
   }
+
+  int currentHash = generateHash();
+
+  if(currentHash == 0) {
+    death = true;
+    deathTime = millis();
+  }
+
+  if(hashes.contains(currentHash)) {
+    stasis = true;
+    stasisTime = millis();
+  }
+
+  hashes.add(0, currentHash);
 }
 
 void printWorld() {
