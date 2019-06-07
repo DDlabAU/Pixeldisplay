@@ -31,7 +31,7 @@ void setup() {
 
   initDisplay();
 
-  generate();
+  initialize();
 }
 
 void draw() {
