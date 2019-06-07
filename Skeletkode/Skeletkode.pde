@@ -8,7 +8,6 @@ void setup() {
 
 void draw() {
   background(0);
-  blendMode(ADD);
 }
 
 void initDisplay() {
