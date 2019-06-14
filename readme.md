@@ -6,13 +6,12 @@ Pixeldisplayet er en lavopløsningsskærm designet og bygget af DD Lab. Skærmen
 Displayet har en opløsning på 12x16 og måler 68x100,5 cm hvor selve skærmområdet måler 68x81 cm.
 
 ## Inden du går i gang
-Skærmens pixels udgøres af rækker af LED-strips der styres gennem et [FadeCandy Controller Board](https://www.adafruit.com/product/1689). For at kunne bruge skærmen skal man altså anvende et fadecandy bibliotek, der, i skrivende stund, er udviklet til Processing og Python. Biblioteker til Javascript og Max er undervejs.
+Skærmens pixels udgøres af rækker af LED-strips der styres gennem et [FadeCandy Controller Board](https://www.adafruit.com/product/1689). For at kunne bruge skærmen skal man altså anvende et bibliotek ved navn Open Pixel Control (OPC).
+Der findes versioner af OPC til både processing og p5.js. I p5.js inkluderes biblioteket på samme måde som normalt, mens processing-versionen af OPC skal indsættes i en fane i din processingkode og ikke installeres som du normalt ville installere et bibliotek i processing. Se vores skeletkode og eksemplerkoder for eksempler på hvordan det ser ud i praksis.
 
-Hvis du vil anvende lab'ets eksempler eller kode til displayet skal du bruge Processing. Hvis du føler dig eventyrlysten kan du dog godt bruge Python, det er dog ikke noget vi supporterer i lab'et.
+Udover OPC biblioteket er det også nødvendigt at hente og køre en FadeCandy Server, der afvikler kommnukationen mellem din computer og fadecandy-boardet.
 
-Udover fadecandy biblioteket er det også nødvendigt at hente og køre en FadeCandy Server, der afvikler kommnukationen mellem din computer og fadecandy-boardet.
-
-Følg [denne vejledning fra Adafruit](https://learn.adafruit.com/led-art-with-fadecandy/installing-software), der guider dig igennem installationen af de nødvendige programmer.  
+Følg [denne vejledning fra Adafruit](https://learn.adafruit.com/led-art-with-fadecandy/installing-software), der guider dig igennem installationen af de nødvendige programmer. Hvis du vil bruge javascript kan du ignorere installationen af processing.
 
 ## Brug displayet
 Når du har installeret alle programmerne fra ovenstående afsnit, er du klar til at bruge displayet. Da displayet har nogle ualmindelige dimensioner, vil du få problemer med at afvikle de eksempler der følger med biblioteket, uden først at ændre i koden.
