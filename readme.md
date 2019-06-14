@@ -13,7 +13,7 @@ Udover OPC biblioteket er det også nødvendigt at hente og køre en FadeCandy S
 
 Følg [denne vejledning fra Adafruit](https://learn.adafruit.com/led-art-with-fadecandy/installing-software), der guider dig igennem installationen af de nødvendige programmer. Hvis du vil bruge javascript kan du ignorere installationen af processing.
 
-## Brug displayet
+## Brug skærmen
 Når du har installeret alle programmerne fra ovenstående afsnit, er du klar til at bruge displayet. Da displayet har nogle ualmindelige dimensioner, vil du få problemer med at afvikle de eksempler der følger med biblioteket, uden først at ændre i koden.
 
 Derfor har vi selv lavet eksempelkode, som du kan finde i mappen `Eksempler`. Eksemplerne kan bruges som de er, men du er selvfølgelig velkommen til at modificere dem og bruge dem som byggesten til dine egne projekter.
