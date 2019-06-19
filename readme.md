@@ -9,7 +9,7 @@ Displayet har en opløsning på 12x16 og måler 68x100,5 cm hvor selve skærmomr
 Skærmens pixels udgøres af rækker af LED-strips der styres gennem et [FadeCandy Controller Board](https://www.adafruit.com/product/1689). For at kunne bruge skærmen skal man altså anvende et bibliotek ved navn Open Pixel Control (OPC).
 Der findes versioner af OPC til både processing og p5.js. I p5.js inkluderes biblioteket på samme måde som normalt, mens processing-versionen af OPC skal indsættes i en fane i din processingkode og ikke installeres som du normalt ville installere et bibliotek i processing. Se vores skeletkode og eksemplerkoder for eksempler på hvordan det ser ud i praksis.
 
-Udover OPC biblioteket er det også nødvendigt at hente og køre en FadeCandy Server, der afvikler kommnukationen mellem din computer og fadecandy-boardet.
+Udover OPC biblioteket er det også nødvendigt at hente og køre en FadeCandy Server, der afvikler kommunikationen mellem din computer og fadecandy-boardet.
 
 Følg [denne vejledning fra Adafruit](https://learn.adafruit.com/led-art-with-fadecandy/installing-software), der guider dig igennem installationen af de nødvendige programmer. Hvis du vil bruge javascript kan du ignorere installationen af processing.
 
