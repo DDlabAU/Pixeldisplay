@@ -19,7 +19,7 @@ boolean death = false;
 boolean stasis = false;
 
 int worldWidth = 12;
-int worldHeight = 15;
+int worldHeight = 16;
 boolean[][] world = new boolean[worldWidth][worldHeight];
 
 ArrayList<Integer> hashes = new ArrayList<Integer>();
